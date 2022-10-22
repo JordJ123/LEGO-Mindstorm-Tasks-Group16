@@ -2,8 +2,8 @@
 
 **Task 1: Justification of sensor choice**  
 One sensor we used is the colour sensor. The purpose of the sensor is to detect
-when the colour changes from the current floor colour to white so I it knows it
-has reached the white spot and needs to change directions.
+when the colour changes from the current floor colour to white so it knows that
+it has reached the white spot and needs to change directions.
 
 Another sensor we used is the gyro sensor. The purpose of this sensor is to know
 when the driving base has turned exactly 180 degrees before moving again because
