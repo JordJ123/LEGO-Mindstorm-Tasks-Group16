@@ -18,8 +18,6 @@ def straight():
         left_motor.run(speed - (value * drift))
 
 def dash():
-    left_motor.hold()
-    right_motor.hold()
     left_motor.reset_angle(0)
     left_motor.run(dashSpeed)
     right_motor.run(dashSpeed)
@@ -32,36 +30,35 @@ def dash():
 def rotate():
 
     #Turn Left
-    left_motor.hold()
-    right_motor.hold()
     left_motor.run(0 - turn)
     right_motor.run(turn)
     while (gyro_sensor.angle() > -90):
         continue
-    if (line_sensor.color() == colour):
+    left_motor.hold()
+    right_motor.hold()
+    if (line_sensor.reflection() >= lineRelflection):
         gyro_sensor.reset_angle(0)
         return False
 
     #Turn Right
-    left_motor.hold()
-    right_motor.hold()
     left_motor.run(turn)
     right_motor.run(0 - turn)
     while (gyro_sensor.angle() < 90):
         continue
-    print(line_sensor.color())
-    if (line_sensor.color() == colour):
+    left_motor.hold()
+    right_motor.hold()
+    if (line_sensor.reflection() >= lineRelflection):
         gyro_sensor.reset_angle(0)
         return False
 
     #Turn Back
-    left_motor.hold()
-    right_motor.hold()
     left_motor.run(0 - turn)
     right_motor.run(turn)
     while (gyro_sensor.angle() > 0):
         continue
-    run30()
+    left_motor.hold()
+    right_motor.hold()
+    return run30()
     
 
 def run30():
@@ -73,12 +70,13 @@ def run30():
     #     continue
 
     left_motor.reset_angle(0)
-    while(line_sensor.color() != colour):
+    while(line_sensor.reflection() < lineRelflection):
         straight()
         if (left_motor.angle() > 630):
             left_motor.hold()
             right_motor.hold()
             return True
+    return False
 
 ev3 = EV3Brick()
 left_motor = Motor(Port.B)
@@ -86,21 +84,23 @@ right_motor = Motor(Port.C)
 gyro_sensor = GyroSensor(Port.S1)
 line_sensor = ColorSensor(Port.S2)
 gyro_sensor.reset_angle(0)
-colour = Color.WHITE
+lineRelflection = 20
 speed = 200
-turn = speed / 1.25
+turn = speed / 4
 drift = speed / 10
-dashSpeed = 20
-dashDistance = 73.5
+dashSpeed = 50
+dashDistance = 63
 dia = 5.5
 
 while(True):
-    while (line_sensor.color() == colour):
+    while (line_sensor.reflection() >= lineRelflection):
         straight()
-    if (line_sensor.color() != colour):
+    if (line_sensor.reflection() < lineRelflection):
+        left_motor.hold()
+        right_motor.hold()
         dash()
         if (rotate()):
-                break
+            break
 
 
 
