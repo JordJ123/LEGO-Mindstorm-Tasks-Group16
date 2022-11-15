@@ -17,7 +17,25 @@ The broken line track will respect the following rules:
 2. Develop the Software Design (by either a timed automaton or a statechart).
    TBD
 3. Develop the algorithm in pseudo-code (with clear association with elements in
-   the software design). TBD
+   the software design).
+
+   ```sql
+   BEGIN
+   	CHECK color
+
+   	::x:: <- WHILE (color IS white)
+   		GO straght
+   	TURN left
+   	CHECK color
+   	IF (color IS white)
+   		GOTO x
+
+   	TURN 180
+   	IF (color IS white)
+   		GOTO x
+   END
+   ```
+
 4. Implement the algorithm in MicroPython (provide a well commented code
    listing). `new.py`
 
