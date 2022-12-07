@@ -1,0 +1,30 @@
+---
+title: "CSCM68/CSC68 Lab submission"
+subtitle: "Group 16"
+author:
+  - Ashish R. Sonwane:
+      institute:
+        - 2145411
+      correspondence: "yes"
+      email: 2145411@swansea.ac.uk
+  - Bob Bobson:
+      institute:
+        - student#
+      correspondence: "yes"
+      email: student#@swansea.ac.uk
+  - Charlie Charlson:
+      institute:
+        - student#
+      correspondence: "yes"
+      email: student#@swansea.ac.uk
+papersize: a4
+fontsize: 12pt
+document: report
+link-citations: true
+links-as-notes: true
+geometry: "left=1.5cm,right=1cm,top=1cm,bottom=1cm"
+colorlinks: true
+codeBlockCaptions: true
+lang: en-UK
+date: Dec 15, 2022
+---

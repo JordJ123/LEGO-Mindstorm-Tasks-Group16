@@ -2,12 +2,15 @@
 
 OUTPUT_DIR = submission
 OUTPUT_FILE = labs
-FILES = README.md
-FLAGS = -s -f markdown
+FILES = README.md pandoc-metadata/frontmatter.yaml
+FLAGS = --lua-filter=pandoc-metadata/scholarly-metadata.lua \
+		--lua-filter=pandoc-metadata/format-authors.lua \
+		-s \
+		-f markdown
 FLAGS_PDF = 
 
 topdf:
-	pandoc -o $(OUTPUT_DIR)/$(OUTPUT_FILE).pdf $(FLAGS) $(FLAGS_PDF) $(FILES)
+	pandoc $(FILES) $(FLAGS) $(FLAGS_PDF) -o $(OUTPUT_DIR)/$(OUTPUT_FILE).pdf 
 
 clean:
-	rm -rf $(OUTPUT)/*
+	rm -rf submission/*

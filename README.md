@@ -1,7 +1,3 @@
----
-geometry: "left=2cm,right=3cm,top=2cm,bottom=2cm"
----
-
 # Task 1: Analysing Sensors
 
 1. **Document values with the different**
