@@ -15,8 +15,7 @@ The broken line track will respect the following rules:
 
 1. Document the Hardware Design (include a picture). TBD
 2. Develop the Software Design (by either a timed automaton or a statechart).
-   ![sc1 image](sc1.png)
-   ![sc2 image](sc2.png)
+   ![ta image](ta.png)
 3. Develop the algorithm in pseudo-code (with clear association with elements in
    the software design).
 
