@@ -1,6 +1,9 @@
 ## Submission
 
 1. Document the Hardware Design (include a picture).<br />
+   Hardware used: Ultrasonic sensor, Color sensor<br />
+   In this task we have used the “Ultrasonic sensor” to detect the distance from each block while the EV3 is moving towards it. A “Color sensor” is used because on the ground there is a white tape for each rectangle. Therefore, we are using the light sensor to as soon as it catches a white line to move 2-3 cm more forward and then try to scan the area by turning left, right or forwards to scan the place to see which distance is the greatest in order to continue its journey. This will make the robot move to the greatest distance not to hit the blocks.
+
  
 2. Develop the Software Design (by either a timed automaton or a statechart).
    ![sc image](sc.png)
