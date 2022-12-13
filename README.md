@@ -93,6 +93,7 @@ _Straight line_
    direction.
 
 2. **Provide a picture of the driving base with the selected sensor(s).**
+
    ![image of the driving base with selected sensor](LT3/task_3.jpeg)
 
 3. **Document the algorithmic idea.**
