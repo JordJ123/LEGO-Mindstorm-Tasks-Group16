@@ -44,11 +44,22 @@ _Gyroscopic sensor_
 
 2. **Discuss the reliability of the sensors based on your findings.**
 
-All sensors appear to work as intended. Most of these sensors appear to be consistent with their recorded values and close to the intended value. Only exception is the gyroscopic sensor, which had varying readings from one sensor to another. This makes the gyroscopic sensor not suitable for most of the tasks in lab due to it's inconsistency.
+All sensors appear to work as intended. Most of these sensors appear to be
+consistent with their recorded values and close to the intended value. Only
+exception is the gyroscopic sensor, which had varying readings from one sensor
+to another. This makes the gyroscopic sensor not suitable for most of the tasks
+in lab due to it's inconsistency.
 
-Another notably issue is that the ultrasonic sensor doesn't seem to pick up objects where they are incredibly close. Anywhere between 5mm and 24mm this thresehold is found. This is evident when it produces the value of the distance between and the object in front at the max distance value it can measure, though this drops back to a more excepted value at 25mm.
+Another notably issue is that the ultrasonic sensor doesn't seem to pick up
+objects where they are incredibly close. Anywhere between 5mm and 24mm this
+thresehold is found. This is evident when it produces the value of the distance
+between and the object in front at the max distance value it can measure, though
+this drops back to a more excepted value at 25mm.
 
-The colour sensor doesn't also seem to be perfect at short distances. Though its measurements seem to be fine on the white line, likely due to its reflectivey, the colour sensor doesn't seem to pick up the carpet very well, showing a max value for 5mm, but dropping back to something more expected at 25mm.
+The colour sensor doesn't also seem to be perfect at short distances. Though its
+measurements seem to be fine on the white line, likely due to its reflectivey,
+the colour sensor doesn't seem to pick up the carpet very well, showing a max
+value for 5mm, but dropping back to something more expected at 25mm.
 
 # Task 2: Testing Motors
 
@@ -66,3 +77,16 @@ _Straight line_
 | fast (240)   | 50          | 60          | 162         | 30          | 60          | 56          | 41          | 65.57143 | 40.6443        |
 
 2. **Discuss the reliability of the motors based on your findings.**
+
+# Task 3: Spot Finding
+
+1. **Document selection of sensors) with justification.**
+
+2. **Provide a picture of the driving base with the selected sensor(s).**
+   ![image of the driving base with selected sensor](images/task3.jpeg)
+
+3. **Document the algorithmic idea.**
+
+4. **Document the algorithm in pseudo-code.**
+
+5. **Provide well-commented MicroPython source code of the implementation.**
