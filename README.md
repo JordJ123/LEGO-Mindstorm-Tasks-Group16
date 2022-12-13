@@ -226,7 +226,7 @@ The broken line track will respect the following rules:
 2. **Develop the Software Design (by either a timed automaton or a
    StateChart).**
 
-   ![Timed automata for Task 4](LT5/ta.png)
+   ![Timed automata for Task 4](LT4/ta.png)
 
 3. **Develop the algorithm in pseudo-code (with clear association with elements
    in the software design).**
