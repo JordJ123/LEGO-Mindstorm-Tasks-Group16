@@ -44,15 +44,11 @@ _Gyroscopic sensor_
 
 2. **Discuss the reliability of the sensors based on your findings.**
 
-_Consistency_
+All sensors appear to work as intended. Most of these sensors appear to be consistent with their recorded values and close to the intended value. Only exception is the gyroscopic sensor, which had varying readings from one sensor to another. This makes the gyroscopic sensor not suitable for most of the tasks in lab due to it's inconsistency.
 
-Most of the sensors are consistent with the recorded values, except gyroscopic
-sensor, which had varying readings from one sensor to another. This makes the
-gyroscopic sensor not suitable for most of the tasks in lab.
+Another notably issue is that the ultrasonic sensor doesn't seem to pick up objects where they are incredibly close. Anywhere between 5mm and 24mm this thresehold is found. This is evident when it produces the value of the distance between and the object in front at the max distance value it can measure, though this drops back to a more excepted value at 25mm.
 
-_Light sensor_
-
-_Color sensor_
+The colour sensor doesn't also seem to be perfect at short distances. Though its measurements seem to be fine on the white line, likely due to its reflectivey, the colour sensor doesn't seem to pick up the carpet very well, showing a max value for 5mm, but dropping back to something more expected at 25mm.
 
 # Task 2: Testing Motors
 
