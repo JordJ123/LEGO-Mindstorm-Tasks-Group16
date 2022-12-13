@@ -456,7 +456,7 @@ The broken line track will respect the following rules:
 
 2. Develop the Software Design (by either a timed automaton or a StateChart).
 
-   ![Task 6 StateChart](sc.png)
+   ![Task 6 StateChart](LT6/sc.png)
 
 3. Develop the algorithm in pseudo-code (with clear association with elements in
    the software design).
