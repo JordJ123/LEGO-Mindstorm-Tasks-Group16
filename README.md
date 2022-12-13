@@ -83,58 +83,59 @@ _Straight line_
 
 1. **Document selection of sensors with justification.**
 
-One sensor we used is the colour sensor. The purpose of the sensor is to detect
-when the colour changes from the current floor colour to white so it knows that
-it has reached the white spot and needs to change directions.
+   One sensor we used is the colour sensor. The purpose of the sensor is to
+   detect when the colour changes from the current floor colour to white so it
+   knows that it has reached the white spot and needs to change directions.
 
-Another sensor we used is the gyro sensor. The purpose of this sensor is to know
-when the driving base has turned exactly 180 degrees before moving again because
-once it reaches the white spot, it needs to go in the reverse direction.
+   Another sensor we used is the gyro sensor. The purpose of this sensor is to
+   know when the driving base has turned exactly 180 degrees before moving again
+   because once it reaches the white spot, it needs to go in the reverse
+   direction.
 
 2. **Provide a picture of the driving base with the selected sensor(s).**
    ![image of the driving base with selected sensor](LT3/task_3.jpeg)
 
 3. **Document the algorithmic idea.**
 
-The algorithmic idea is that the driving base is intended to go straight and
-while it is going straight it should continually check if the colour sensor has
-picked up the white spot. Once it reaches the white spot, the driving base needs
-to stop and continually rotate until the gyro sensor picks up the next
-occurrence of 180 degrees from the gyro sensor so it is able to go in the
-reverse of the direction it was originally going. It needs to complete all of
-these steps 10 times.
+   The algorithmic idea is that the driving base is intended to go straight and
+   while it is going straight it should continually check if the colour sensor
+   has picked up the white spot. Once it reaches the white spot, the driving
+   base needs to stop and continually rotate until the gyro sensor picks up the
+   next occurrence of 180 degrees from the gyro sensor so it is able to go in
+   the reverse of the direction it was originally going. It needs to complete
+   all of these steps 10 times.
 
 4. **Document the algorithm in pseudo-code.**
 
-```pseudocode
-ev3 = new EV3Brick()
-leftMotor = new Motor(Port.B)
-rightMotor = new Motor(Port.B)
-lineSensor = new ColorSensor(Port.S1)
-gyroSender = new GyroSensor(Port.S3)
-speed = 300 rotatation = speed / 2
+   ```pseudocode
+   ev3 = new EV3Brick()
+   leftMotor = new Motor(Port.B)
+   rightMotor = new Motor(Port.B)
+   lineSensor = new ColorSensor(Port.S1)
+   gyroSender = new GyroSensor(Port.S3)
+   speed = 300 rotatation = speed / 2
 
-for i=0 to 9
-    leftMotor.run(speed)
-    rightMotor.run(speed)
+   for i=0 to 9
+   	leftMotor.run(speed)
+   	rightMotor.run(speed)
 
-    while true
-        if lineSensor.color == Color.WHITE then
-            leftMotor.hold()
-            rightMotor.hold()
-            leftMotor.run(rotation)
-            rightMoto.run(0 – rotation)
-            while gyroSensor.angle() < (180 * (i + 1))
-                continue
-            endwhile
-			leftMotor.hold()
-            rightMotor.hold()
-            BREAK
-		endif
-	endwhile
-next i
+   	while true
+   		if lineSensor.color == Color.WHITE then
+   			leftMotor.hold()
+   			rightMotor.hold()
+   			leftMotor.run(rotation)
+   			rightMoto.run(0 – rotation)
+   			while gyroSensor.angle() < (180 * (i + 1))
+   				continue
+   			endwhile
+   			leftMotor.hold()
+   			rightMotor.hold()
+   			BREAK
+   		endif
+   	endwhile
+   next i
 
-```
+   ```
 
 5. **Provide well-commented MicroPython source code of the implementation.**
 
