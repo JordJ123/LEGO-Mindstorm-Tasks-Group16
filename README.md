@@ -70,34 +70,3 @@ _Straight line_
 | fast (240)   | 50          | 60          | 162         | 30          | 60          | 56          | 41          | 65.57143 | 40.6443        |
 
 2. **Discuss the reliability of the motors based on your findings.**
-
-# Task 3: Spot Finder
-
-1. **Document selection of sensor(s) with justification.**
-
-2. **Provide a picture of the driving base with the selected sensor(s).**
-
-3. **Document the algorithmic idea.**
-
-4. **Provide well-commented MicroPython source code of the implementation.**
-
-# Task 4
-
-1.
-2.
-3.
-4.
-
-# Task 5
-
-1.
-2.
-3.
-4.
-
-# Task 6
-
-1.
-2.
-3.
-4.
