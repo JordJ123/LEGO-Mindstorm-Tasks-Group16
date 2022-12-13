@@ -2,21 +2,21 @@
 title: "CSCM68/CSC68 Lab submission"
 subtitle: "Group 16"
 author:
+  - Jordan Jones:
+      institute:
+        - 1910397
+      correspondence: "yes"
+      email: 1910397@swansea.ac.uk
   - Ashish R. Sonwane:
       institute:
         - 2145411
       correspondence: "yes"
       email: 2145411@swansea.ac.uk
-  - Bob Bobson:
+  - Christodoulos Gabriel:
       institute:
-        - student#
+        - 1905302
       correspondence: "yes"
-      email: student#@swansea.ac.uk
-  - Charlie Charlson:
-      institute:
-        - student#
-      correspondence: "yes"
-      email: student#@swansea.ac.uk
+      email: 1905302@swansea.ac.uk
 papersize: a4
 fontsize: 12pt
 document: report
