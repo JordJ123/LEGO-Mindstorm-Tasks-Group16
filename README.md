@@ -62,6 +62,8 @@ _Gyroscopic sensor_
    showing a max value for 5mm, but dropping back to something more expected at
    25mm.
 
+\break
+
 # Task 2: Testing Motors
 
 1.**Document values from the experiments.** (4 in total):
@@ -78,6 +80,8 @@ _Straight line_
 | fast (240)   | 50          | 60          | 162         | 30          | 60          | 56          | 41          | 65.57  | 40.64          |
 
 2. **Discuss the reliability of the motors based on your findings.**
+
+\break
 
 # Task 3: Spot Finding
 
@@ -190,6 +194,8 @@ _Straight line_
    ev3.speaker.say("Mission Success")
    ```
 
+\break
+
 # Task 4 : Line-with-gaps follower
 
 ![task image](LT4/task4_img.png)
@@ -224,10 +230,14 @@ The broken line track will respect the following rules:
    the tape therefore the colour sensor would easily get messed up with
    detecting the threshold of the white colour.
 
+   ![Task 4 hardware design.](LT4/task4_img.png)
+
+\break
+
 2. **Develop the Software Design (by either a timed automaton or a
    StateChart).**
 
-   ![Timed automata for Task 4](LT4/ta.png)
+   ![Task 4 timed automata.](LT4/ta.png)
 
 3. **Develop the algorithm in pseudo-code (with clear association with elements
    in the software design).**
@@ -329,6 +339,8 @@ The broken line track will respect the following rules:
    		rotate()
    ```
 
+\break
+
 # Task 5: Line Following
 
 1. **Document the Hardware Design (include a picture).**
@@ -344,6 +356,8 @@ The broken line track will respect the following rules:
    the white line of the path. So we had to play with the proportionality of the
    wheel spin(the turnings) and the speed. As I also mentioned before a drawback
    was the colour or how the tape was placed on the floor
+
+   ![Task 5 hardware design.](LT5/task5_hw.jpg)
 
 2. **Develop the Software Design (by either a timed automaton or a
    StateChart).**
@@ -437,6 +451,8 @@ The broken line track will respect the following rules:
        # wait(10)
    ```
 
+\break
+
 # Task 6: Maze Solver
 
 1. **Document the Hardware Design (include a picture).**
@@ -455,19 +471,26 @@ The broken line track will respect the following rules:
    continue its journey. This will make the robot move to the greatest distance
    not to hit the blocks.
 
-2. Develop the Software Design (by either a timed automaton or a StateChart).
+   ![Task 6 hardware design](LT6/task6_hw.jpg)
+
+\break
+
+2. **Develop the Software Design (by either a timed automaton or a
+   StateChart).**
 
    ![Task 6 StateChart](LT6/sc.png)
 
-3. Develop the algorithm in pseudo-code (with clear association with elements in
-   the software design).
+3. **Develop the algorithm in pseudo-code (with clear association with elements
+   in the software design).**
 
    ```sql
 
    ```
 
-4. Implement the algorithm in MicroPython (provide a well commented code
-   listing). `lt6.py`
+4. **Implement the algorithm in MicroPython (provide a well commented code
+   listing).**
+
+   `FILE: lt6.py`
 
    ```python
     #!/usr/bin/env pybricks-micropython
