@@ -62,7 +62,7 @@ _Gyroscopic sensor_
    showing a max value for 5mm, but dropping back to something more expected at
    25mm.
 
-\break
+<br>
 
 # Task 2: Testing Motors
 
@@ -79,9 +79,10 @@ _Straight line_
 | medium (120) | 34          | 125         | 114         | 140         | 37          | 73          | 215         | 105.43 | 59.15          |
 | fast (240)   | 50          | 60          | 162         | 30          | 60          | 56          | 41          | 65.57  | 40.64          |
 
-2. **Discuss the reliability of the motors based on your findings.**
+2. **Discuss the reliability of the motors based on your findings.**<br>
+These results show that motors are unreliable, no matter what the speed is set to on the motors. Each motor speed seems to results in a wide range of distances that the ev3 can reach before veering off course. Despite this, it does appear that slower the speed, more likely it is to reach a peak distance or less likely to only go a small distance before it veers off. Overall, this data shows that other methods are needed to try to keep the ev3 driving straight instead of just relying on the motors.
 
-\break
+<br>
 
 # Task 3: Spot Finding
 
@@ -193,8 +194,7 @@ _Straight line_
 
    ev3.speaker.say("Mission Success")
    ```
-
-\break
+<br>
 
 # Task 4 : Line-with-gaps follower
 
