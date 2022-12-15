@@ -127,7 +127,7 @@ These results show that motors are unreliable, no matter what the speed is set t
    	rightMotor.run(speed)
 
    	while true
-   		if lineSensor.color == Color.WHITE then
+   		if lineSensor.color() == Color.WHITE then
    			leftMotor.hold()
    			rightMotor.hold()
    			leftMotor.run(rotation)
@@ -493,28 +493,47 @@ The broken line track will respect the following rules:
    leftMotor = new Motor(Port.A)
    rightMotor = new Motor(Port.B)
    lineSensor = new ColorSensor(Port.S1)
+   ultrasonicSensor = new UltrasonicSensor(Port.S1)
    speed = 200
-   rotatation = speed / 2
-
-   for i=0 to 9
-   	leftMotor.run(speed)
-   	rightMotor.run(speed)
-
-   	while true
-   		if lineSensor.color == Color.WHITE then
-   			leftMotor.hold()
-   			rightMotor.hold()
-   			leftMotor.run(rotation)
-   			rightMoto.run(0 – rotation)
-   			while gyroSensor.angle() < (180 * (i + 1))
-   				continue
-   			endwhile
-   			leftMotor.hold()
-   			rightMotor.hold()
-   			BREAK
-   		endif
-   	endwhile
-   next i
+   white = 20
+   middle = 280
+   wall = 250
+   right = 90
+   left = - right
+    
+   while true
+      ev3.drive()
+      if lineSensor.reflection() > white then
+      
+         //Centre
+         ev3.straight(middle)
+         
+         //Check Left
+         ev3.turn(left)
+         if ultrasonicSensor.distance() > wall then
+            return
+         end if
+         
+         //Check Forward
+         ev3.turn(right)
+         if ultrasonicSensor.distance() > wall then
+            return
+         end if
+         
+         //Check Right
+         ev3.turn(right)
+         if ultrasonicSensor.distance() > wall then
+            return
+         end if
+         
+         //Check Behind
+         ev3.turn(right)
+         if ultrasonicSensor.distance() > wall then
+            return
+         end if
+         
+      end if
+   end while
    ```
 
 4. **Implement the algorithm in MicroPython (provide a well commented code
@@ -590,7 +609,7 @@ The broken line track will respect the following rules:
     white = 20
     middle = 280
     wall = 250
-    right = 90
+    right = 30
     left = - right
 
     # Main
