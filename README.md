@@ -79,8 +79,15 @@ _Straight line_
 | medium (120) | 34          | 125         | 114         | 140         | 37          | 73          | 215         | 105.43 | 59.15          |
 | fast (240)   | 50          | 60          | 162         | 30          | 60          | 56          | 41          | 65.57  | 40.64          |
 
-2. **Discuss the reliability of the motors based on your findings.**<br>
-These results show that motors are unreliable, no matter what the speed is set to on the motors. Each motor speed seems to results in a wide range of distances that the ev3 can reach before veering off course. Despite this, it does appear that slower the speed, more likely it is to reach a peak distance or less likely to only go a small distance before it veers off. Overall, this data shows that other methods are needed to try to keep the ev3 driving straight instead of just relying on the motors.
+2. **Discuss the reliability of the motors based on your findings.**
+
+These results show that motors are unreliable, no matter what the speed is set
+to on the motors. Each motor speed seems to results in a wide range of distances
+that the ev3 can reach before veering off course. Despite this, it does appear
+that slower the speed, more likely it is to reach a peak distance or less likely
+to only go a small distance before it veers off. Overall, this data shows that
+other methods are needed to try to keep the ev3 driving straight instead of just
+relying on the motors.
 
 <br>
 
@@ -119,7 +126,7 @@ These results show that motors are unreliable, no matter what the speed is set t
    rightMotor = new Motor(Port.B)
    lineSensor = new ColorSensor(Port.S1)
    gyroSender = new GyroSensor(Port.S3)
-   speed = 300 
+   speed = 300
    rotatation = speed / 2
 
    for i=0 to 9
@@ -194,7 +201,8 @@ These results show that motors are unreliable, no matter what the speed is set t
 
    ev3.speaker.say("Mission Success")
    ```
-<br>
+
+   <br>
 
 # Task 4 : Line-with-gaps follower
 
@@ -274,14 +282,14 @@ The broken line track will respect the following rules:
    from pybricks.robotics import DriveBase
    from pybricks.media.ev3dev import SoundFile, ImageFile
    import math
- 
+
    #Move straight based on the line
    def straight():
    	deviation = line_sensor.reflection() - threshold
    	turn_rate = proportional_gain * deviation
    	robot.drive(speed, turn_rate)
    	wait(10)
-   
+
    #Move slightly forward for the colour sensor to detect what is in front
    def dash():
    	left_motor.reset_angle(0)
@@ -372,8 +380,40 @@ The broken line track will respect the following rules:
 3. Develop the algorithm in pseudo-code (with clear association with elements in
    the software design).
 
-   ```sql
+   ```
+   L_MOTOR <- PORT(A)
+   R_MOTOR <- PORT(B)
+   COLOR_SENSOR_READING <- PORT(S1)
 
+   STRIP_CLR  <- 60
+   CARPET_CLR <- 3
+   THRESHOLD <- (STRIP_CLR + CARPET_CLR) / 2
+   GAIN <- 1.6
+   SPEED <- 160
+
+   BEGIN line_following_seqeunce()
+
+   		BEGIN LOOP
+   			L_MOTOR <- SPEED
+   			R_MOTOR <- SPEED
+
+   			deviation <- (THRESHOLD - COLOR_SENSOR_READING)
+   			turn_rate <- GAIN * deviation
+
+   			IF |deviation| > 2.0
+   				IF (deviation >= 0)
+   					R_MOTOR *= GAIN
+   				ELSE
+   					L_MOTOR	*= GAIN
+   			ENDIF
+
+   			ELSE
+   				L_MOTOR *=  GAIN
+   				R_MOTOR *=  GAIN
+   			ENDIF
+   		END LOOP
+
+   END
    ```
 
 4. Implement the algorithm in MicroPython (provide a well commented code
@@ -500,38 +540,38 @@ The broken line track will respect the following rules:
    wall = 250
    right = 90
    left = - right
-    
+
    while true
       ev3.drive()
       if lineSensor.reflection() > white then
-      
+
          //Centre
          ev3.straight(middle)
-         
+
          //Check Left
          ev3.turn(left)
          if ultrasonicSensor.distance() > wall then
             return
          end if
-         
+
          //Check Forward
          ev3.turn(right)
          if ultrasonicSensor.distance() > wall then
             return
          end if
-         
+
          //Check Right
          ev3.turn(right)
          if ultrasonicSensor.distance() > wall then
             return
          end if
-         
+
          //Check Behind
          ev3.turn(right)
          if ultrasonicSensor.distance() > wall then
             return
          end if
-         
+
       end if
    end while
    ```
