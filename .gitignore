@@ -3,3 +3,4 @@ __pycache__/
 .venv/
 LTA
 Resources
+.DS_Store

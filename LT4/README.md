@@ -1,7 +1,5 @@
 # Lab task 4 : Line-with-gaps follower
 
-![task image](task4_img.png)
-
 The broken line track will respect the following rules:
 
 - Gaps will only occur on straight parts of the line
@@ -13,13 +11,22 @@ The broken line track will respect the following rules:
 
 ## Submission
 
-1. Document the Hardware Design (include a picture).<br />
-   Hardware used: Color Sensor<br />
-   In order to complete this task we were required to use a “color sensor”. The color sensor would try to detect the white lines and keep on following them. We also  tried to use a “Gyro sensor” in order to make the micro-phython coding less confusing but the “Gyro sensor” wouldn’t work, the values one the “Gyro” where not accurate values. We thought of adding a ”Gyro sensor” in order to keep/make our “EV3 robot” to move straight because most of the times the robot would go abit off track when making turns or even on straight lines but unfortunately the “Gyro sensor” values were not accurate and not high sensitivitve enough. We also faced some difficulties due to the duck tape placed on the floor, because at some places of the path were more darker than the other part of the tape therefore the colour sensor would easily get messed up with detecting the threshold of the white color<br />
- 
+1. Document the Hardware Design (include a picture).<br /> Hardware used: Color
+   Sensor<br /> In order to complete this task we were required to use a “color
+   sensor”. The color sensor would try to detect the white lines and keep on
+   following them. We also tried to use a “Gyro sensor” in order to make the
+   micro-phython coding less confusing but the “Gyro sensor” wouldn’t work, the
+   values one the “Gyro” where not accurate values. We thought of adding a ”Gyro
+   sensor” in order to keep/make our “EV3 robot” to move straight because most
+   of the times the robot would go abit off track when making turns or even on
+   straight lines but unfortunately the “Gyro sensor” values were not accurate
+   and not high sensitivitve enough. We also faced some difficulties due to the
+   duck tape placed on the floor, because at some places of the path were more
+   darker than the other part of the tape therefore the colour sensor would
+   easily get messed up with detecting the threshold of the white color<br />
+
 2. Develop the Software Design (by either a timed automaton or a statechart).
    ![ta image](ta.png)
-   
 3. Develop the algorithm in pseudo-code (with clear association with elements in
    the software design).
 
