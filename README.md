@@ -115,11 +115,12 @@ These results show that motors are unreliable, no matter what the speed is set t
 
    ```pseudocode
    ev3 = new EV3Brick()
-   leftMotor = new Motor(Port.B)
+   leftMotor = new Motor(Port.A)
    rightMotor = new Motor(Port.B)
    lineSensor = new ColorSensor(Port.S1)
    gyroSender = new GyroSensor(Port.S3)
-   speed = 300 rotatation = speed / 2
+   speed = 300 
+   rotatation = speed / 2
 
    for i=0 to 9
    	leftMotor.run(speed)
@@ -140,7 +141,6 @@ These results show that motors are unreliable, no matter what the speed is set t
    		endif
    	endwhile
    next i
-
    ```
 
 5. **Provide well-commented MicroPython source code of the implementation.**
@@ -488,8 +488,33 @@ The broken line track will respect the following rules:
 3. **Develop the algorithm in pseudo-code (with clear association with elements
    in the software design).**
 
-   ```sql
+   ```pseudocode
+   ev3 = new EV3Brick()
+   leftMotor = new Motor(Port.A)
+   rightMotor = new Motor(Port.B)
+   lineSensor = new ColorSensor(Port.S1)
+   speed = 200
+   rotatation = speed / 2
 
+   for i=0 to 9
+   	leftMotor.run(speed)
+   	rightMotor.run(speed)
+
+   	while true
+   		if lineSensor.color == Color.WHITE then
+   			leftMotor.hold()
+   			rightMotor.hold()
+   			leftMotor.run(rotation)
+   			rightMoto.run(0 – rotation)
+   			while gyroSensor.angle() < (180 * (i + 1))
+   				continue
+   			endwhile
+   			leftMotor.hold()
+   			rightMotor.hold()
+   			BREAK
+   		endif
+   	endwhile
+   next i
    ```
 
 4. **Implement the algorithm in MicroPython (provide a well commented code
@@ -511,9 +536,9 @@ The broken line track will respect the following rules:
     def check():
 
         #Left
-        robot.turn(first_turn)
-        robot.turn(first_turn)
-        robot.turn(first_turn)
+        robot.turn(left)
+        robot.turn(left)
+        robot.turn(left)
         print(ultrasonic.distance())
         if (ultrasonic.distance() > wall):
             print("LEFT")
@@ -521,9 +546,9 @@ The broken line track will respect the following rules:
             return
 
         #Forward
-        robot.turn(second_turn)
-        robot.turn(second_turn)
-        robot.turn(second_turn)
+        robot.turn(right)
+        robot.turn(right)
+        robot.turn(right)
         print(ultrasonic.distance())
         if (ultrasonic.distance() > wall):
             print("FORWARD")
@@ -531,9 +556,9 @@ The broken line track will respect the following rules:
             return
 
         #Right
-        robot.turn(second_turn)
-        robot.turn(second_turn)
-        robot.turn(second_turn)
+        robot.turn(right)
+        robot.turn(right)
+        robot.turn(right)
         print(ultrasonic.distance())
         if (ultrasonic.distance() > wall):
             print("RIGHT")
@@ -541,9 +566,9 @@ The broken line track will respect the following rules:
             return
 
         #Back
-        robot.turn(second_turn)
-        robot.turn(second_turn)
-        robot.turn(second_turn)
+        robot.turn(right)
+        robot.turn(right)
+        robot.turn(right)
         print(ultrasonic.distance())
         if (ultrasonic.distance() > wall):
             print("BACK")
@@ -558,42 +583,15 @@ The broken line track will respect the following rules:
     right_motor = Motor(Port.B)
     ultrasonic = UltrasonicSensor(Port.S2)
     line_sensor = ColorSensor(Port.S1)
-    robot = DriveBase(left_motor, right_motor, wheel_diameter=55, axle_track=142)
+    robot = DriveBase(left_motor, right_motor, wheel_diameter=55, axle_track=131)
 
     # Values
     speed = 200
     white = 20
-    middle = 28
+    middle = 280
     wall = 250
-    right = 30
+    right = 90
     left = - right
-    first_turn = 0
-    second_turn = 0
-
-    # while True:
-    #     robot.turn(left)
-    #     robot.turn(left)
-    #     robot.turn(left)
-    #     robot.turn(right)
-    #     robot.turn(right)
-    #     robot.turn(right)
-
-    # Hardcode
-    robot.drive(speed, 0)
-    while True:
-        if (line_sensor.reflection() > white):
-            robot.straight(middle)
-            print(ultrasonic.distance())
-            if (ultrasonic.distance() < wall):
-                robot.turn(left)
-                robot.turn(left)
-                robot.turn(left)
-                first_turn = left
-                second_turn = right
-            else:
-                first_turn = right
-                second_turn = left
-            break
 
     # Main
     while True:
