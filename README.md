@@ -232,7 +232,7 @@ The broken line track will respect the following rules:
 
    ![Task 4 hardware design.](LT4/task4_img.png)
 
-\break
+<br>
 
 2. **Develop the Software Design (by either a timed automaton or a
    StateChart).**
@@ -274,13 +274,15 @@ The broken line track will respect the following rules:
    from pybricks.robotics import DriveBase
    from pybricks.media.ev3dev import SoundFile, ImageFile
    import math
-
+ 
+   #Move straight based on the line
    def straight():
    	deviation = line_sensor.reflection() - threshold
    	turn_rate = proportional_gain * deviation
    	robot.drive(speed, turn_rate)
    	wait(10)
-
+   
+   #Move slightly forward for the colour sensor to detect what is in front
    def dash():
    	left_motor.reset_angle(0)
    	robot.drive(dashSpeed, 0)
@@ -289,8 +291,10 @@ The broken line track will respect the following rules:
    			robot.stop()
    			break
 
+   #Rotate ev3 to see if next part of line can be found
    def rotate():
-   	#Turn Left
+
+      #Turn Left
    	for i in range(0,9):
    		robot.turn(-10)
    		print(i)
@@ -330,6 +334,7 @@ The broken line track will respect the following rules:
    threshold = (black + white) / 2
    proportional_gain = 1.4
 
+   #Main Loop
    while True:
    	while (line_sensor.reflection() > black):
    		straight()
@@ -339,7 +344,7 @@ The broken line track will respect the following rules:
    		rotate()
    ```
 
-\break
+<br>
 
 # Task 5: Line Following
 
@@ -350,12 +355,12 @@ The broken line track will respect the following rules:
    > - Color Sensor
 
    This task was a bit more challenging than the previous one because we had to
-   deal with sharp turns an almost semi-circle turns. The speed of the robot
+   deal with sharp turns and almost semi-circle turns. The speed of the robot
    played a huge role in this task, because sometimes the robot would make a
    turning faster than it should and the colour sensor was not able to detect
    the white line of the path. So we had to play with the proportionality of the
    wheel spin(the turnings) and the speed. As I also mentioned before a drawback
-   was the colour or how the tape was placed on the floor
+   was the tape colour or how the tape was placed on the floor
 
    ![Task 5 hardware design.](LT5/task5_hw.jpg)
 
@@ -451,7 +456,7 @@ The broken line track will respect the following rules:
        # wait(10)
    ```
 
-\break
+<br>
 
 # Task 6: Maze Solver
 
@@ -473,7 +478,7 @@ The broken line track will respect the following rules:
 
    ![Task 6 hardware design](LT6/task6_hw.jpg)
 
-\break
+<br>
 
 2. **Develop the Software Design (by either a timed automaton or a
    StateChart).**
