@@ -65,8 +65,7 @@ while True:
 
     # Calculate the turn rate. e.g. 2.5 * 10 = 25 deg/s
     turn_rate = PROPORTIONAL_GAIN * deviation
-    speed = DRIVE_SPEED
 
-    move_steer(speed, turn_rate)
+    move_steer(DRIVE_SPEED, turn_rate)
 
     # wait(10)
