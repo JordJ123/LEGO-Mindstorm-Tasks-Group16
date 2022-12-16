@@ -31,6 +31,8 @@ _Ultrasonic sensor_
 | 250           | 250     | 251     | 251     | 251     | 251     | 251     | 251     | 250.8571 | 0.349927       |
 | infinity      | 2550    | 2550    | 2550    | 2550    | 2550    | 2550    | 2550    | 2550     | 0              |
 
+&nbsp;
+
 _Gyroscopic sensor_
 
 | Angle (degrees) | Value 1 | Value 2 | Value 3 | Value 4 | Value 5 | Value 6 | Value 7 | Mean     | Std. Deviation |
@@ -62,7 +64,7 @@ _Gyroscopic sensor_
    showing a max value for 5mm, but dropping back to something more expected at
    25mm.
 
-<br>
+---
 
 # Task 2: Testing Motors
 
@@ -106,7 +108,7 @@ relying on the motors.
 
 2. **Provide a picture of the driving base with the selected sensor(s).**
 
-   ![image of the driving base with selected sensor](LT3/task_3.jpeg)
+   ![image of the driving base with selected sensor](LT3/task_3.jpeg){width=5in}
 
 3. **Document the algorithmic idea.**
 
@@ -120,7 +122,7 @@ relying on the motors.
 
 4. **Document the algorithm in pseudo-code.**
 
-   ```pseudocode
+   ```{ caption="Pseudocode for Task 3: Spot Finding"}
    ev3 = new EV3Brick()
    leftMotor = new Motor(Port.A)
    rightMotor = new Motor(Port.B)
@@ -152,7 +154,7 @@ relying on the motors.
 
 5. **Provide well-commented MicroPython source code of the implementation.**
 
-   ```python
+   ```{.Python caption="Python code for Task 3: Spot Finding"}
    #!/usr/bin/env pybricks-micropython
    from pybricks.hubs import EV3Brick
    from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor,
@@ -202,11 +204,9 @@ relying on the motors.
    ev3.speaker.say("Mission Success")
    ```
 
-   <br>
+---
 
 # Task 4 : Line-with-gaps follower
-
-![task image](LT4/task4_img.png)
 
 The broken line track will respect the following rules:
 
@@ -238,19 +238,19 @@ The broken line track will respect the following rules:
    the tape therefore the colour sensor would easily get messed up with
    detecting the threshold of the white colour.
 
-   ![Task 4 hardware design.](LT4/task4_img.png)
+   ![Task 4 hardware design.](LT4/task4_hw.jpeg){width=5in}
 
-<br>
+\break
 
 2. **Develop the Software Design (by either a timed automaton or a
    StateChart).**
 
-   ![Task 4 timed automata.](LT4/ta.png)
+   ![Task 4 timed automata.](LT4/ta.png){width=5in}
 
 3. **Develop the algorithm in pseudo-code (with clear association with elements
    in the software design).**
 
-   ```sql
+   ```{ caption="Pseudocode for Task 4: Line-with-gaps follower"}
    BEGIN
    	CHECK color
 
@@ -267,12 +267,12 @@ The broken line track will respect the following rules:
    END
    ```
 
-4. Implement the algorithm in MicroPython (provide a well commented code
-   listing).
+4. **Implement the algorithm in MicroPython (provide a well commented code
+   listing).**
 
    `FILE: new.py`
 
-   ```python
+   ```{ .Python  caption="Python implementation for Task 4: Line-with-gaps follower"}
    #!/usr/bin/env pybricks-micropython
    from pybricks.hubs import EV3Brick
    from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor,
@@ -352,7 +352,9 @@ The broken line track will respect the following rules:
    		rotate()
    ```
 
-<br>
+---
+
+\break
 
 # Task 5: Line Following
 
@@ -370,17 +372,17 @@ The broken line track will respect the following rules:
    wheel spin(the turnings) and the speed. As I also mentioned before a drawback
    was the tape colour or how the tape was placed on the floor
 
-   ![Task 5 hardware design.](LT5/task5_hw.jpg)
+   ![Task 5 hardware design.](LT5/task5_hw.jpeg){width=4.5in}
 
 2. **Develop the Software Design (by either a timed automaton or a
    StateChart).**
 
-   ![Task 5 StateChart](LT5/sc.png)
+   ![Task 5 StateChart](LT5/sc.png){width=5in}
 
-3. Develop the algorithm in pseudo-code (with clear association with elements in
-   the software design).
+3. **Develop the algorithm in pseudo-code (with clear association with elements
+   in the software design).**
 
-   ```
+   ```{ caption="Pseudocode for Task 5: Line follower"}
    L_MOTOR <- PORT(A)
    R_MOTOR <- PORT(B)
    COLOR_SENSOR_READING <- PORT(S1)
@@ -416,12 +418,12 @@ The broken line track will respect the following rules:
    END
    ```
 
-4. Implement the algorithm in MicroPython (provide a well commented code
-   listing).
+4. **Implement the algorithm in MicroPython (provide a well commented code
+   listing).**
 
    `FILE: lt5.py`
 
-   ```python
+   ```{ .Python  caption="Python implementation for Task 5: Line follower"}
    #!/usr/bin/env pybricks-micropython
 
    # Import the necessary libraries
@@ -496,7 +498,7 @@ The broken line track will respect the following rules:
        # wait(10)
    ```
 
-<br>
+---
 
 # Task 6: Maze Solver
 
@@ -516,19 +518,25 @@ The broken line track will respect the following rules:
    continue its journey. This will make the robot move to the greatest distance
    not to hit the blocks.
 
-   ![Task 6 hardware design](LT6/task6_hw.jpg)
+   &nbsp;
 
-<br>
+   &nbsp;
+
+   ![Task 6 hardware design](LT6/task6_hw.jpg){width=5in}
+
+\break
 
 2. **Develop the Software Design (by either a timed automaton or a
    StateChart).**
 
-   ![Task 6 StateChart](LT6/sc.png)
+   ![Task 6 StateChart](LT6/sc.png){width=5in}
+
+   &nbsp;
 
 3. **Develop the algorithm in pseudo-code (with clear association with elements
    in the software design).**
 
-   ```pseudocode
+   ```{ caption="Pseudocode for Task 6: Maze solver"}
    ev3 = new EV3Brick()
    leftMotor = new Motor(Port.A)
    rightMotor = new Motor(Port.B)
@@ -576,12 +584,14 @@ The broken line track will respect the following rules:
    end while
    ```
 
+&nbsp;
+
 4. **Implement the algorithm in MicroPython (provide a well commented code
    listing).**
 
    `FILE: lt6.py`
 
-   ```python
+   ```{ .Python  caption="Python implementation for Task 6: Maze solver"}
     #!/usr/bin/env pybricks-micropython
     from pybricks.hubs import EV3Brick
     from pybricks.ev3devices import (Motor, TouchSensor, ColorSensor,
@@ -659,3 +669,5 @@ The broken line track will respect the following rules:
             robot.straight(middle)
             check()
    ```
+
+---
